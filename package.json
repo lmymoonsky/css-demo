@@ -4,5 +4,12 @@
   "main": "index.js",
   "repository": "git@github.com:lmymoonsky/css-demo.git",
   "author": "lmy_moonsky@163.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2",
+    "vue": "^2.2.6"
+  },
+  "scripts": {
+    "dev": "node app.js"
+  }
 }

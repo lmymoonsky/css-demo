@@ -1,0 +1,55 @@
+h4 {
+    padding: 10px;
+    border-top: 1px dashed grey;
+}
+.options {
+    margin: 5px;
+    padding: 5px;
+    background:ghostwhite;
+}
+.content1 {
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+    width: 500px;
+    /*height: 200px;*/
+    border: 1px solid black;
+}
+
+.child-0 {
+    height: 80px;
+    -moz-box-flex: 2;
+    -webkit-box-flex: 2;
+    box-flex: 2;
+    background: bisque;
+}
+
+.child1-1 {
+    height: 80px;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    background: gold;
+}
+
+.child1-2 {
+    height: 80px;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    background: yellowgreen;
+}
+
+.child2-1 {
+    height: 50px;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    background: gold;
+}
+
+.child2-2 {
+    width: 260px;
+    height: 50px;
+    background: yellowgreen;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex</title>
+    <link rel="stylesheet" href="demo1.css" type="text/css"/>
+</head>
+
+<body>
+    <div id="app" class="wrapper">
+        <div class="row">
+        <h4>和谐版</h4>
+            <div class="content1" :style="{'box-orient':boxOrient,'box-direction':boxDirection}">
+                <div class="child-0">1<p>flex: 2;</p></div>
+                <div class="child1-1">2<p>flex: 1;</p></div>
+                <div class="child1-2">3<p>flex: 1;</p></div>
+            </div>
+            <div class="options">
+                <p>box-orient: {{boxOrient}} ;</p>
+                <input type="radio" name="box-orient" value="horizontal" v-model="boxOrient"> horizontal
+                <input type="radio" name="box-orient" value="vertical" v-model="boxOrient"> vertical
+                <input type="radio" name="box-orient" value="inline-axis" v-model="boxOrient"> inline-axis
+                <input type="radio" name="box-orient" value="block-axis" v-model="boxOrient"> block-axis
+                <input type="radio" name="box-orient" value="inherit" v-model="boxOrient"> inherit
+            </div>
+            <div class="options">
+                <p>box-direction: {{boxOrient}} ;</p>
+                <input type="radio" name="box-direction" value="normal" v-model="boxDirection"> normal
+                <input type="radio" name="box-direction" value="reverse" v-model="boxDirection"> reverse
+                <input type="radio" name="box-direction" value="inherit" v-model="boxDirection"> inherit
+            </div>
+        </div>
+        <h4>非和谐版</h4>
+        <div class="content1">
+            <div class="child-0">flex: 2;</div>
+            <div class="child2-1">flex: 1;</div>
+            <div class="child2-2">width:260px;</div>
+        </div>
+        <h4>父元素 其他属性 box-orient, box-direction, box-align, box-pack, box-lines</h4>
+        <p>1、下面说说 box-orient 规定子元素 是横向显示还是纵向显示。取值 有 horizontal | vertical | inline-axis | block-axis | inherit,
+         horizontal：水平排列显示； vertical：垂直排列显示；其中 inline-axis 是默认值，且与horizontal 表现一致，让子元素横向排列；block-axis 与 vertical表现一致，让子元素纵向排列。</p>
+        <p>2、box-direction ,表示子元素的排列顺序。取值 有 normal | reverse | inherit, 默认为 normal,表示按正常顺序，也就是从上至下，或者从左至右，先出现的元素在上或者在左；reverse:表示反转，意思 如果原来顺序是 1-2-3，设置成 reverse 则为 3-2-1。</p>
+        <p>3、box-align </p>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="demo1.js"></script>
+</body>
+</html>
