@@ -6,46 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>flex</title>
-    <link rel="stylesheet" href="demo1.css" type="text/css"/>
+    <link rel="stylesheet" href="demo1.css" type="text/css" />
 </head>
 
 <body>
     <div id="app" class="wrapper">
-        <div class="row">
         <h4>和谐版</h4>
-            <div class="content1" :style="{'box-orient':boxOrient,'box-direction':boxDirection}">
-                <div class="child-0">1<p>flex: 2;</p></div>
-                <div class="child1-1">2<p>flex: 1;</p></div>
-                <div class="child1-2">3<p>flex: 1;</p></div>
+        <div class="content1" :style="{'box-orient':boxOrient,'box-direction':boxDirection}">
+            <div class="child-0">1
+                <p>flex: 2;</p>
             </div>
-            <div class="options">
-                <p>box-orient: {{boxOrient}} ;</p>
-                <input type="radio" name="box-orient" value="horizontal" v-model="boxOrient"> horizontal
-                <input type="radio" name="box-orient" value="vertical" v-model="boxOrient"> vertical
-                <input type="radio" name="box-orient" value="inline-axis" v-model="boxOrient"> inline-axis
-                <input type="radio" name="box-orient" value="block-axis" v-model="boxOrient"> block-axis
-                <input type="radio" name="box-orient" value="inherit" v-model="boxOrient"> inherit
+            <div class="child1-1">2
+                <p>flex: 1;</p>
             </div>
-            <div class="options">
-                <p>box-direction: {{boxOrient}} ;</p>
-                <input type="radio" name="box-direction" value="normal" v-model="boxDirection"> normal
-                <input type="radio" name="box-direction" value="reverse" v-model="boxDirection"> reverse
-                <input type="radio" name="box-direction" value="inherit" v-model="boxDirection"> inherit
+            <div class="child1-2">3
+                <p>flex: 1;</p>
             </div>
         </div>
+        <div class="options">
+            <p>box-orient: {{boxOrient}} ;</p>
+            <input type="radio" name="box-orient" value="horizontal" v-model="boxOrient"> horizontal
+            <input type="radio" name="box-orient" value="vertical" v-model="boxOrient"> vertical
+            <input type="radio" name="box-orient" value="inline-axis" v-model="boxOrient"> inline-axis
+            <input type="radio" name="box-orient" value="block-axis" v-model="boxOrient"> block-axis
+            <input type="radio" name="box-orient" value="inherit" v-model="boxOrient"> inherit
+        </div>
+        <div class="options">
+            <p>box-direction: {{boxOrient}} ;</p>
+            <input type="radio" name="box-direction" value="normal" v-model="boxDirection"> normal
+            <input type="radio" name="box-direction" value="reverse" v-model="boxDirection"> reverse
+            <input type="radio" name="box-direction" value="inherit" v-model="boxDirection"> inherit
+        </div>
         <h4>非和谐版</h4>
-        <div class="content1">
+        <div class="content2" :style="{'box-align':boxAlign}">
             <div class="child-0">flex: 2;</div>
             <div class="child2-1">flex: 1;</div>
             <div class="child2-2">width:260px;</div>
         </div>
+        <div class="options">
+            <p>box-align: {{boxAlign}} ;</p>
+            <input type="radio" name="box-align" value="start" v-model="boxAlign"> start
+            <input type="radio" name="box-align" value="end" v-model="boxAlign"> end
+            <input type="radio" name="box-align" value="center" v-model="boxAlign"> center
+            <input type="radio" name="box-align" value="baseline" v-model="boxAlign"> baseline
+            <input type="radio" name="box-align" value="stretch" v-model="boxAlign"> stretch
+        </div>
+        <div class="content2" :style="{'box-pack':boxPack}">
+            <div class="child3-0">1</div>
+            <div class="child3-1">2</div>
+            <div class="child3-2">3</div>
+        </div>
+        <div class="options">
+            <p>box-pack: {{boxPack}} ;</p>
+            <input type="radio" name="box-pack" value="start" v-model="boxPack"> start
+            <input type="radio" name="box-pack" value="end" v-model="boxPack"> end
+            <input type="radio" name="box-pack" value="center" v-model="boxPack"> center
+            <input type="radio" name="box-pack" value="justify" v-model="boxPack"> justify
+        </div>
+
+        <div class="content2" :style="{'box-lines':boxLines}">
+            <div class="child4-0">1</div>
+            <div class="child4-1">2</div>
+            <div class="child4-2">3</div>
+        </div>
+        <div class="options">
+            <p>box-lines: {{boxLines}} ;</p>
+            <input type="radio" name="box-lines" value="single" v-model="boxLines"> single
+            <input type="radio" name="box-lines" value="multiple" v-model="boxLines"> multiple
+        </div>
+
         <h4>父元素 其他属性 box-orient, box-direction, box-align, box-pack, box-lines</h4>
-        <p>1、下面说说 box-orient 规定子元素 是横向显示还是纵向显示。取值 有 horizontal | vertical | inline-axis | block-axis | inherit,
-         horizontal：水平排列显示； vertical：垂直排列显示；其中 inline-axis 是默认值，且与horizontal 表现一致，让子元素横向排列；block-axis 与 vertical表现一致，让子元素纵向排列。</p>
-        <p>2、box-direction ,表示子元素的排列顺序。取值 有 normal | reverse | inherit, 默认为 normal,表示按正常顺序，也就是从上至下，或者从左至右，先出现的元素在上或者在左；reverse:表示反转，意思 如果原来顺序是 1-2-3，设置成 reverse 则为 3-2-1。</p>
-        <p>3、box-align </p>
+        <p>1、下面说说 box-orient 规定子元素 是横向显示还是纵向显示。取值 有 horizontal | vertical | <em>inline-axis</em> | block-axis | inherit, horizontal：水平排列显示；
+            vertical：垂直排列显示；其中 inline-axis 是默认值，且与horizontal 表现一致，让子元素横向排列；block-axis 与 vertical表现一致，让子元素纵向排列。</p>
+        <p>2、box-direction ,表示子元素的排列顺序。取值 有 <em>normal</em> | reverse | inherit, 默认为 normal,表示按正常顺序，也就是从上至下，或者从左至右，先出现的元素在上或者在左；reverse:表示反转，意思
+            如果原来顺序是 1-2-3，设置成 reverse 则为 3-2-1。</p>
+        <p>3、box-align 和 box-pack 都是规定盒子内部的剩余空间怎么使用的。box-align 是规定 剩余空间 垂直方向的对齐表现。取值 有 start | end | center | baseline | <em>stretch</em>。其中stretch为默认值，为拉伸，也就是父标签高度过高，其孩子元素的高度就多高。start表示顶边对齐，end为底部对齐，center为居中对齐，baseline表示基线（英文字母o,m,n等的底边位置线）对齐。</p>
+        <p>4、box-pack 是规定 剩余空间 水平方向的对齐表现。取值 有 <em>start</em> | end | center | justify。start 表示与父标签起始位置对其， end 与父标签结束位置对齐，center
+            居中显示,justify 表示两端对齐。</p>
+        <p>5、box-lines 表示子元素是可以换行显示呢，还是即便宽度超出 也在同一行显示。取值 有俩 single | multiple，其中single是默认值，表示死活不换行。multiple 表示可多行显示。</p>
     </div>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="demo1.js"></script>
 </body>
+
 </html>

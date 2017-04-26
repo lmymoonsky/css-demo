@@ -15,6 +15,14 @@ h4 {
     /*height: 200px;*/
     border: 1px solid black;
 }
+.content2 {
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+}
 
 .child-0 {
     height: 80px;
@@ -41,15 +49,48 @@ h4 {
 }
 
 .child2-1 {
-    height: 50px;
+    /*height: 50px;*/
     -moz-box-flex: 1;
     -webkit-box-flex: 1;
+    line-height: 50px;
     box-flex: 1;
     background: gold;
 }
 
 .child2-2 {
     width: 260px;
+    /*height: 50px;*/
+    line-height: 30px;
+    background: yellowgreen;
+}
+.child3-0 {
+    width: 50px;
+    background: bisque;
+}
+.child3-1 {
+    width: 50px;
+    height: 30px;
+    background: gold;
+}
+
+.child3-2 {
+    width: 30px;
+    height: 50px;
+    background: yellowgreen;
+}
+.child4-0 {
+    width: 50px;
+    height: 20px;
+    background: bisque;
+}
+.child4-1 {
+    width: 50px;
+    height: 30px;
+    background: gold;
+}
+
+.child4-2 {
+    width: 30px;
     height: 50px;
     background: yellowgreen;
 }

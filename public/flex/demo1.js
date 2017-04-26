@@ -4,5 +4,8 @@ new Vue({
         message:'12',
         boxOrient:'',
         boxDirection:'',
+        boxAlign:'',
+        boxPack:'',
+        boxLines:'',
     }
 });
