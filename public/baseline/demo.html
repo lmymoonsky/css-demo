@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>baseline</title>
+    <style>
+        .wrapper{
+            width: 900px;margin: 30px auto;
+        }
+        .demo {
+            border: 1px solid green;
+            margin: 10px;
+        }
+
+        .demo1 span {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .test1 {
+            margin-top: 50px;
+            font-size: 20px;
+            line-height: 0;
+            border: 1px solid #cccccc;
+            background: #eeeeee;
+        }
+
+        .test2 {
+            margin-top: 20px;
+            font-size: 0;
+            line-height: 20px;
+            border: 1px solid #cccccc;
+            background: #eeeeee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h3>css 中基线（baseline）相关问题</h3>
+        <div class="demo">
+            <img src="a.jpeg"><span style="background-color:#f00;">xx看这里</span>xx更明显
+        </div>
+        <div class="demo">
+            <span style="font-size:24px;background-color:#f90;">18px大小</span><span style="background-color:#17e;">默认大小</span>
+        </div>
+        <div class="demo1">
+            <span style="font-size:24px;background-color:#f90;font-style:'microsoft yahei';">微软雅黑字体XX</span><span style="font-size:24px;background-color:#17e;font-style:'PingFang SC';">平方字体XX</span>
+            <span style="font-size:24px;background-color:#abd0f7;font-family:'SimSun';">宋体XX</span>
+        </div>
+        <div class="test1">测试</div>
+        <div class="test2">测试</div>
+        <!--参考链接-->
+        <!--http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/-->
+        <!--http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/-->
+</body>
+
+</html>
