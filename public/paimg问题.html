@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定位问题</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 100%;
+            height: 300px;
+            border-bottom: 1px solid forestgreen;
+        }
+
+        .div2 img {
+            position: absolute;
+        }
+
+        .div3 p {
+            position: relative;
+        }
+
+        .div3 img {
+            position: absolute;
+        }
+
+        .div4 p {
+            position: relative;
+        }
+
+        .div4 img {
+            position: absolute;
+            margin-top: 10%;
+            margin-left: 10%;
+        }
+
+        .div5 p {
+            position: relative;
+        }
+
+        .div5 img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        注意： 1、如果不加reset样式，由于不同浏览器全然不一致，chrome 下 块元素默认会有margin值,即使不设置宽高，其width也与容器的宽度一直，而height为0。而inline 元素则没有margin 宽高正常也都为0，但由于会继承浏览器默认字体大小因此高度会显示浏览器默认字体大小高度，宽度也会因为把img替换元素当成文本处理，所以宽度也会为图片的宽度。
+    </div>
+    <div class="div1">
+        <p>
+            <a><img src="https://cn.vuejs.org/images/search.png" /></a>
+        </p>
+    </div>
+    <div class="div2">
+        <p>
+            <a><img src="https://cn.vuejs.org/images/search.png" /></a>
+        </p>
+    </div>
+    <div class="div3">
+        <p>
+            <a><img src="https://cn.vuejs.org/images/search.png" /></a>
+        </p>
+    </div>
+    <div class="div4">
+        <p>
+            <a><img src="https://cn.vuejs.org/images/search.png" /></a>
+        </p>
+    </div>
+    <div class="div5">
+        <p>
+            <a><img src="https://cn.vuejs.org/images/search.png" /></a>
+        </p>
+        <p>
+            <a><img src="https://cn.vuejs.org/images/search.png" /></a>
+        </p>
+    </div>
+</body>
+
+</html>
