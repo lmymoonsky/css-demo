@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>移动端底部布局问题</title>
+  <style type="text/css">
+  *,html {
+    padding: 0;
+    margin: 0;
+  }
+  .content {
+    background: pink;
+    min-height: calc(100vh - 70px);
+  }
+  header {
+    width: 100%;
+    height: 30px;
+    background: peachpuff;
+  }
+  footer {
+    width: 100%;
+    height: 40px;
+    background: goldenrod;
+  }
+  .left,.right {
+    /*height: 10vh; 内容区域高度小于窗口高度*/
+    height: 80vh; /*内容区域高度大于窗口高度*/
+  }
+  </style>
+</head>
+<body>
+  <div class="wraper">
+    <header></header>
+    <div class="content">
+      <div class="left">刚好久考虑法国红酒看来他Yui欧派吧你们，</div>
+      <div class="right">刚好久考虑；</div>
+    </div>
+    <footer></footer>
+  </div>
+</body>
+</html>
