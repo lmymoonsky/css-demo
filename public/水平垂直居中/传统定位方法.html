@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>水平垂直居中</title>
+  <style type="text/css">
+  .box{
+    position: relative; /* 父元素相对定位 */
+    width: 100%;
+    height: 500px;
+    background: bisque;
+  }
+  .content {
+    position: absolute; /* 子元素绝对定位 */
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin:-150px 0 0 -150px;
+    background: palegoldenrod;
+  }
+  </style>
+</head>
+<body>
+  <div class="box">
+    .box
+    <div class="content">
+      .content:
+      此方法用于 知道.content 元素的宽高 的情况
+    </div>
+  </div>
+</body>
+</html>
