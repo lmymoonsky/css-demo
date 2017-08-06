@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 410px;
+      overflow: hidden;
+      border:1px solid blue;
+    }
+    .clear {
+      clear: both;
+    }
+    .left{
+      float: left;
+      width: 200px;
+      padding-bottom: 2000px;
+      margin-bottom: -2000px;
+      background: red;
+    }
+    .right{
+      width: 200px;
+      float: left;
+      padding-bottom: 2000px;
+      margin-bottom: -2000px;
+      background: palegoldenrod
+    }
+    </style>
+</head>
+<body>
+  padding-bottom,margin-bottom 补偿法，在每一列中设置padding-bottom:2000px;margin-bottom:-2000px;然后父元素overflow:hidden;
+  <div class="container">
+    <div class="left">left block</div>
+    <div class="right">right block;right block;right block;right block;right block;right block</div>
+    <div class="clear"></div>
+  </div>
+</body>
+</html>
