@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>移动端页面自适应</title>
+  <style>
+  *{margin: 0;padding: 10px;}
+  pre {
+    background: papayawhip;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="info">
+      提到移动端页面自适应，则我们就会想到 流式布局(百分比)和弹性布局（flex）两种方案。以上方法相对比较传统，还有一种流行的方式 “rem”。
+      下面我们简单介绍下 rem 的使用方法。
+    </div>
+    <div>
+      1、首先在页面中引入一段原生脚本：
+      <pre>
+        (function (doc, win) {
+          var docEl = doc.documentElement,
+              resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+              recalc = function () {
+                  var clientWidth = docEl.clientWidth;
+                  if (!clientWidth) return;
+                  if(clientWidth>=640){
+                      docEl.style.fontSize = '100px';
+                  }else{
+                      docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                  }
+              };
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+      </pre>
+      这段代码的意思就是，在页面宽度大于等于640PX的情况在 统一设置 html的字体大小为100px;当页面宽度小于640px时，html的字体大小为 [100px*(页面宽度/640)]px。
+      <div> 
+        1、为什么要以 640 为基准？</br>
+        因为 640 是移动端安全尺寸的最大宽度，不会让页面在设备中留白。在设计图不是改尺寸情况下最好先转成 640 的尺寸。
+      </div>
+      <div> 
+        2、为什么要设置 html 的 font-size ？</br>
+        因为 rem 即为root element 的字体大小即为 html 的字体大小，页面所有元素都是依照html的字体大小设置的。例如：html 的 font-size = 20px;其他元素宽高为60px 40px ，转化成rem则为 60/20=3rem,40/20 = 2rem;
+        根据上面的 js 代码，在不同尺寸在 html 的字体大小不一样，子节点的字体大小也会随之变化，这就实现了相应的自适应布局效果。
+      </div>
+      <div> 
+        3、计算设计图和实际开发应用尺寸？</br>
+        设备屏幕的DPR（设备像素比，比如dpr=2时，表示1个CSS像素由2个物理像素点组成），也就是根据 dpr 计算html的font-size。
+        如 750px的设计图，某个元素div的宽度是90px;
+        在dpr = 1设备（如电脑）上，html{font-size:50px;}=>1rem=50px;=>div{font-size:(90/50)rem;}
+        在dpr = 2设备（如iphone 5 和 6）上，html{font-size:50*2px;}=>1rem=100px;=>div{font-size:(90/100)rem;}
+        在dpr = 3设备（如iphone 6 sp）上，html{font-size:50*3px;}=>1rem=150px;=>div{font-size:(90/150)rem;}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
