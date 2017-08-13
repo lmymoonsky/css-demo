@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>sticky</title>
+  <style>
+.wrap {
+  border:1px solid #ccc;
+}
+.content {
+  width: 100%;
+  height: 900px;
+  background: peachpuff;
+}
+.stickyDiv {
+  position: sticky;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: gold;
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="content">内容区域</div>
+    <div class="content">内容区域</div>
+    <div class="stickyDiv">我是sticky元素,实现粘性布局,当设置的位置不在超过约束范围时候表现出定位效果，否则该元素出现在正常出现在文档流中。并且当父元素overflow:hidden;时该属性失效。</div>
+  </div>
+</body>
+</html>
